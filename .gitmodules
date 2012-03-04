@@ -45,7 +45,7 @@
 	url = git://github.com/cakebaker/scss-syntax.vim.git
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
-	url = git://github.com/klen/python-mode.git
+	url = git://github.com/interrupted/python-mode.git
 [submodule "bundle/fugative"]
 	path = bundle/fugative
 	url = git://github.com/tpope/vim-fugitive.git
