@@ -56,10 +56,9 @@ set mousemodel=popup
 colorscheme molokai
 set guifont=Ubuntu\ Mono\ 14
 
-" Make the command line two lines high and change the statusline display to
-" something that looks useful.
+" Make the command line one line high
 set showcmd
-set cmdheight=2
+set cmdheight=1
 set laststatus=2
 
 function! SyntaxItem()
@@ -92,6 +91,9 @@ autocmd BufEnter * :syntax sync fromstart
 " Better Search
 set hlsearch
 set incsearch
+
+" Enable python folding
+let g:pymode_folding = 0
 
 filetype plugin indent on
 syntax on
@@ -138,33 +140,51 @@ set dir=~/.vim/sessions
 " Keymappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader = ","
+
 " quicker window switching
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-Left> <C-w>h
-nnoremap <C-Down> <C-w>j
-nnoremap <C-Up> <C-w>k
-nnoremap <C-Right> <C-w>l
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-Left> <C-w>h
+nnoremap <silent> <C-Down> <C-w>j
+nnoremap <silent> <C-Up> <C-w>k
+nnoremap <silent> <C-Right> <C-w>l
 
 " arrow keys move visible lines
-inoremap <Down> <C-R>=pumvisible() ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
-inoremap <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
-nnoremap <Down> gj
-nnoremap <Up> gk
-vnoremap <Down> gj
-vnoremap <Up> gk
+inoremap <silent> <Down> <C-R>=pumvisible()
+      \ ? "\<lt>Down>" : "\<lt>C-O>gj"<CR>
+inoremap <silent> <Up> <C-R>=pumvisible() ? "\<lt>Up>" : "\<lt>C-O>gk"<CR>
+nnoremap <silent> <Down> gj
+nnoremap <silent> <Up> gk
+vnoremap <silent> <Down> gj
+vnoremap <silent> <Up> gk
+
+" And be global by default
+set gdefault
 
 " tab for brackets
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <silent> <tab> %
+vnoremap <silent> <tab> %
 
 " NERDtree on <leader>t
-nnoremap <leader>t :NERDTree<CR>
+nnoremap <silent> <leader>t :NERDTree<CR>
+
+" Command-T support
+nnoremap <silent> <leader>o :CommandT<CR>
+
+" gundo
+nnoremap <silent> <Leader>u :GundoToggle<CR>
+
+" Disable pylint checking every save
+let g:pymode_lint_write = 1
+
+" Set key 'R' for run python code
+let g:pymode_run_key = '<leader>R'
 
 " remove stupid help
-map <C-b> :Explore!<CR>
+map <silent> <C-b> :Explore!<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
