@@ -54,7 +54,7 @@ let no_buffers_menu=1
 set mousemodel=popup
 
 colorscheme molokai
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Monaco\ 12
 
 " Make the command line one line high
 set showcmd
@@ -177,9 +177,6 @@ nnoremap <silent> <leader>o :CommandT<CR>
 " gundo
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 
-" Disable pylint checking every save
-let g:pymode_lint_write = 1
-
 " Set key 'R' for run python code
 let g:pymode_run_key = '<leader>R'
 
@@ -204,6 +201,16 @@ autocmd FileType python setlocal expandtab
 \ shiftwidth=4 tabstop=8 colorcolumn=79
 \ formatoptions+=croq softtabstop=4 smartindent
 let python_highlight_all = 1
+let python_no_highlight_builtins = 1
+let g:pymode_lint_write = 0
+let g:pymode_lint_onfly = 0
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_ignore = "E501,W402"
+
+""" Rust
+autocmd FileType rust setlocal expandtab 
+\ shiftwidth=4 tabstop=8 colorcolumn=79
+\ softtabstop=4 smartindent
 
 """ Coffe
 autocmd FileType coffee setlocal expandtab
@@ -242,6 +249,10 @@ autocmd FileType cpp setlocal expandtab
 autocmd FileType vim setlocal expandtab
 \ shiftwidth=2 tabstop=8 softtabstop=2
 
+""" html
+autocmd FileType html setlocal expandtab
+\ shiftwidth=2 tabstop=2 softtabstop=2
+
 """ javascript
 autocmd FileType javascript setlocal expandtab
 \ shiftwidth=2 tabstop=2 softtabstop=2
@@ -251,3 +262,7 @@ let javascript_enable_domhtmlcss=1
 " ----------
 autocmd FileType java setlocal expandtab 
 \ tabstop=4 shiftwidth=4 softtabstop=4
+nnoremap <silent> <leader>i :JavaImport<cr>
+nnoremap <silent> <leader>d :JavaDocSearch -x declarations<cr>
+nnoremap <silent> <cr> :JavaSearchContext<cr>
+
