@@ -87,8 +87,8 @@ if has("spell")
     hi SpellRare   guisp=#FFFFFF gui=undercurl
 endif
 hi Statement       guifg=#F92672               gui=bold
-hi StatusLine      guifg=#455354 guibg=fg
-hi StatusLineNC    guifg=#808080 guibg=#080808
+hi StatusLine      guifg=#070707 guibg=#cccccc
+hi StatusLineNC    guifg=#090909 guibg=#666666
 hi StorageClass    guifg=#FD971F               gui=italic
 hi Structure       guifg=#66D9EF
 hi Tag             guifg=#F92672               gui=italic
@@ -99,9 +99,9 @@ hi Typedef         guifg=#66D9EF
 hi Type            guifg=#66D9EF               gui=none
 hi Underlined      guifg=#808080               gui=underline
 
-hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
-hi VisualNOS                     guibg=#403D3D
-hi Visual                        guibg=#403D3D
+hi VertSplit       guifg=#090909 guibg=#090909 gui=bold
+hi VisualNOS                     guibg=#233324
+hi Visual                        guibg=#232324
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
 hi WildMenu        guifg=#66D9EF guibg=#000000
 
@@ -115,12 +115,13 @@ if s:molokai_original == 1
    hi NonText         guifg=#75715E
    hi SpecialKey      guifg=#75715E
 else
-   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
-   hi Comment         guifg=#465457
-   hi CursorLine                    guibg=#293739
+   hi Normal          guifg=#F8F8F2 guibg=#161617
+   hi Comment         guifg=#667477
+   hi CursorLine                    guibg=#202021
+   hi CursorLineNr    guifg=#bbbbbb
    hi CursorColumn                  guibg=#293739
-   hi ColorColumn                   guibg=#232526
-   hi LineNr          guifg=#465457 guibg=#232526
+   hi ColorColumn                   guibg=#131314
+   hi LineNr          guifg=#777777 guibg=#161617
    hi NonText         guifg=#465457
    hi SpecialKey      guifg=#465457
 end

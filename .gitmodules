@@ -76,3 +76,6 @@
 [submodule "bundle/indenthtml"]
 	path = bundle/indenthtml
 	url = git://github.com/vim-scripts/indenthtml.vim.git
+[submodule "bundle/linenumber"]
+	path = bundle/linenumber
+	url = git://github.com/myusuf3/numbers.vim.git

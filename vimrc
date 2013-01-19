@@ -15,7 +15,7 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-set guioptions=aegirtc
+set guioptions=aegitc
 set gcr=a:blinkon0
 if has("gui_running")
   set cursorline
@@ -54,7 +54,8 @@ let no_buffers_menu=1
 set mousemodel=popup
 
 colorscheme molokai
-set guifont=Monaco\ 12
+set guifont=Ubuntu\ \Mono\ 18px
+set lsp=4
 
 " Make the command line one line high
 set showcmd
@@ -65,8 +66,9 @@ function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
 set statusline+=%(%3p\ %%\ %9(%3.6l,%-2v%)\ %10f%M\ (%{&ff})\ %r%h%w%)
-set statusline+=\ %=%(%-10.{SyntaxItem()}\ %{fugitive#statusline()}%)
+set statusline+=\ %=%(%{fugitive#statusline()}%)
 set number
+" %-10.{SyntaxItem()}\ 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentsettings
@@ -173,6 +175,9 @@ nnoremap <silent> <leader>t :NERDTree<CR>
 
 " Command-T support
 nnoremap <silent> <leader>o :CommandT<CR>
+
+" LineNr Toggle
+nnoremap <F3> :NumbersToggle<CR>
 
 " gundo
 nnoremap <silent> <Leader>u :GundoToggle<CR>
