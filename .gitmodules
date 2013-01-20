@@ -79,3 +79,15 @@
 [submodule "bundle/linenumber"]
 	path = bundle/linenumber
 	url = git://github.com/myusuf3/numbers.vim.git
+[submodule "bundle/webapi"]
+	path = bundle/webapi
+	url = git://github.com/mattn/webapi-vim.git
+[submodule "bundle/gist"]
+	path = bundle/gist
+	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "bundle/easytag"]
+	path = bundle/easytag
+	url = git://github.com/xolox/vim-easytags.git

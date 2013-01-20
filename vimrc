@@ -65,10 +65,13 @@ set laststatus=2
 function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
+
 set statusline+=%(%3p\ %%\ %9(%3.6l,%-2v%)\ %10f%M\ (%{&ff})\ %r%h%w%)
 set statusline+=\ %=%(%{fugitive#statusline()}%)
 set number
 " %-10.{SyntaxItem()}\ 
+
+let NERDTreeMinimalUI=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentsettings
@@ -173,8 +176,12 @@ vnoremap <silent> <tab> %
 " NERDtree on <leader>t
 nnoremap <silent> <leader>t :NERDTree<CR>
 
-" Command-T support
-nnoremap <silent> <leader>o :CommandT<CR>
+nnoremap <silent> <leader>o :CtrlP<CR>
+nnoremap <silent> <leader>l :CtrlPBufTag<CR>
+nnoremap <silent> <leader>p :CtrlPBufTagAll<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_extensions = ['tag', 'buffertag']
 
 " LineNr Toggle
 nnoremap <F3> :NumbersToggle<CR>
